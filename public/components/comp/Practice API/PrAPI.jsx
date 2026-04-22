@@ -19,3 +19,9 @@ export const deletePost = async (id) => {
   const res = await prAPI.get(`/posts/${id}`);
   return res.data;
 };
+
+export const addPost = async (newPost) => {
+  // newPost mein title aur body ka object hoga
+  const res = await prAPI.post("/posts", newPost);
+  return res.data;
+};
